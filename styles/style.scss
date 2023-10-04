@@ -1,0 +1,42 @@
+@import "reset.css";
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+.header__nav {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(11,1fr);
+    border:1px solid black;
+  }
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right:1px solid black;
+    padding:20px 10px;
+    transition: all 0.5s ease-in-out;
+    &:first-child,
+    &:nth-child(10),
+    &:last-child {
+      opacity:0.3
+    }
+  }
+  li:hover {
+    background-color: black;
+    color:white;
+    cursor: pointer;
+  }
+}
+
+.header__breadcrumbs {
+  margin:10px 0px;
+  padding-left:55px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+.header__crumb:last-child {
+  opacity: 0.3;
+}
+}
