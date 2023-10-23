@@ -1,134 +1,86 @@
 @import "reset.css";
-$borderColor: rgba(0,0,0,0.4);
-$borderWidth: 2px;
 
+$blue: #00A0C8;
+$red:#CF3022;
+$darkred:#573533;
+$beige: #DCE1D4;
 
 body {
   height:100vh;
-  display: grid;
-  grid-template-rows: 1fr 10fr;
-}
-
-
-.header {
+  width:100vw;
+  background-color: $beige;
   display: flex;
-  flex-direction: column;
-.header__nav {
-  ul {
-    display: grid;
-    grid-template-columns: repeat(5,1fr) 1.5fr repeat(5,1fr);
-    background-color: $borderColor;
-    gap:$borderWidth;
-  }
-  .header__tab {
-    background-color: white;
-    padding:30px 0px;
-    text-align: center;
-    font-weight: 400;
-    font-size: 14px;
-    transition: all 0.3s ease-in-out;
-    &:nth-child(6) {
-      text-transform: uppercase;
-      font-weight: bold;
-      font-size: 22px;
-    }
-    &:hover {
-      background-color: black;
-      color:white;
-    }
-  }
-}
-
-.header__breadcrumbs {
-  border-top: $borderWidth solid $borderColor;
-  border-bottom: $borderWidth solid $borderColor;
-  padding:10px 0px;
-  font-size: 12px;
-  padding-left:50px;
-  .header__crumb {
-    font-weight: 500;
-    &:last-child {
-      opacity: 0.5;
-    }
-  }
-}
-}
-
-.product {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  background-color: $borderColor;
-  gap:$borderWidth;
-  .product__img {
-    background-image: url("/img//Aesop_Category_Page_Body_Hand_Secondary_3_Split_2_Tablet_1260x1576px.avif");
-    background-size: cover;
-  }
-  .product__info {
-    gap:$borderWidth;
-    display: grid;
-    grid-template-rows: 1.5fr 1fr;
-    .product__header {
-      gap:10px;
-      background-color: white;
+  justify-content: center;
+  .poster {
+    .top {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-transform: uppercase;
-      padding:0px 50px;
-      .product__category {
-        font-size: 22px;
-        font-weight: 500;
-      }
-      .product__title {
-        font-size: 44px;
-        font-weight: 500;
-      }
-      .product__add-to-cart {
-        display: flex;
-        gap:50px;
-      }
-      .product__price {
-        font-size: 32px;
-      }
-      .product__plus {
-        font-size: 32px;
-      }
-      .product__total--qty {
-        font-size: 32px;
-        gap:10px;
-      ;
-      }
-      .product__minus {
-        font-size: 32px;
-        opacity: 0.5;
+      align-items: flex-end;
+      span {
+        font-weight: 800;
+        padding:10px;
+        line-height: 20px;
       }
     }
-    .product__footer {
+    .main {
       display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap:$borderWidth;
-     .product__description {
-        background-color: white;
+      grid-template-rows: 60px 1fr 60px;
+      .main-row {
+        font-weight: 800;
+        font-size: 60px;
+        &:first-child {
+          background-color: $red;
+        }
+        &:nth-child(2) {
+          display: flex;
+          span {
+            padding:20px 10px;
+            
+          }
+        }
+        &:last-child {
+          background-color: $blue;
+        }
       }
-      .product__description p {
-        width:80%;
-        padding:25px 0px;
-        margin:0 auto;
-      }
-      .product__faq {
-        padding:50px;
+    }
+    .bottom {
         display: flex;
         flex-direction: column;
-        gap:20px;
-        background-color: white;
-        .product__question {
-          display: flex;
-          justify-content: space-between;
-          border-bottom: $borderWidth solid $borderColor;
-          text-transform: uppercase;
-          font-weight: 600;
-          padding-bottom: 10px;
+        justify-content: space-between;
+        span {
+          padding:10px;
+          font-weight: 800;
+          line-height: 20px;
         }
+    }
+    padding:10px;
+    width:50%;
+    height:100%;
+    display: grid;
+    grid-template-columns: 60px 1fr 60px;
+    grid-template-rows: 60px 1fr 1fr 1fr 60px;
+    .bar {
+      &:first-child {
+        grid-column: span 3;
+        background-color: $blue;
+      }
+      &:nth-child(2),
+      &:nth-child(4) {
+        grid-row: span 1;
+        background-color: $blue;
+      }
+      &:nth-child(5),
+      &:nth-child(7) {
+        grid-row: span 1; 
+        background-color: $darkred;
+      }
+      &:nth-child(8),
+      &:nth-child(10) {
+        grid-row: span 1;
+        background-color: $red;
+      }
+      &:nth-child(11) {
+        grid-column:  span 3;
+        background-color: $red;
       }
     }
   }
